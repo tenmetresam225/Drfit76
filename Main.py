@@ -27,6 +27,7 @@ class AbstractCar:
         self.rotation_vel = rotation_vel
         self.angle = 0
         self.x, self.y = self.START_POS
+        self.acceleration = 0.1
 
     def rotate(self, left=False, right=False):
         if left:
@@ -36,6 +37,23 @@ class AbstractCar:
 
     def draw(self, win):
         blit_rotate_center(win, self.img, (self.x, self.y), self.angle)
+
+    def move_forward(self):
+        moving = True
+        self.vel = min(self.vel + self.acceleration, self.max_vel)
+        self.move()
+
+    def move(self):
+        radians = math.radians(self.angle)
+        vertical = math.cos(radians) * self.vel
+        horizontal = math.sin(radians) * self.vel
+
+        self.y -= vertical
+        self.x -= horizontal
+
+    def reduce_speed(self):
+        self.vel = max(self.vel - self.acceleration / 1, 0)
+        self.move()
 
 class PlayerCar(AbstractCar):
     IMG = MAIN_CAR
@@ -61,5 +79,23 @@ while run:
         if event.type == pygame.QUIT:
             run = False
             break
+
+    keys = pygame.key.get_pressed()
+    moved = False
+    moving = False
+
+    if keys[pygame.K_w]:
+        moved = True
+        moving = True
+        player_car.move_forward()
+
+    if moving:
+        if keys[pygame.K_a]:
+            player_car.rotate(left=True)
+        if keys[pygame.K_d]:
+            player_car.rotate(right=True)
+
+    if not moved:
+        player_car.reduce_speed()
 
 pygame.quit()
