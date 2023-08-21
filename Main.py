@@ -98,6 +98,12 @@ while run:
         moving = True
         player_car.move_forward()
 
+    if uname[1] == "raspberrypi":
+        if button_bottom_left.is_pressed:
+            moved = True
+            moving = True
+            player_car.move_forward()
+
     if moving:
         if keys[pygame.K_a]:
             player_car.rotate(left=True)
