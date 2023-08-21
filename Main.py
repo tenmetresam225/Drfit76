@@ -103,6 +103,11 @@ while run:
             player_car.rotate(left=True)
         if keys[pygame.K_d]:
             player_car.rotate(right=True)
+        if uname[1] == "raspberrypi":
+            if joystick_left.is_pressed:
+                player_car.rotate(left=True)
+            if joystick_left.is_pressed:
+                player_car.rotate(right=True)
 
     if not moved:
         player_car.reduce_speed()
