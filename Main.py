@@ -1,6 +1,15 @@
 import pygame
 import time
 import math
+import platform
+import os
+
+uname = os.uname()
+
+if uname[1] == "raspberrypi":
+    print("I am on a Pi, Importing GPIO Lib")
+    from gpiozero import Button
+
 
 from utils import scale_image, blit_rotate_center
 
