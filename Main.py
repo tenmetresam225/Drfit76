@@ -10,6 +10,19 @@ if uname[1] == "raspberrypi":
     print("I am on a Pi, Importing GPIO Lib")
     from gpiozero import Button
 
+    joystick_up = Button(4)
+    joystick_down = Button(17)
+    joystick_left = Button(27)
+    joystick_right = Button(22)
+    button_top_left = Button(18)
+    button_top_middle = Button(15)
+    button_top_right = Button(14)
+    button_bottom_left = Button(25)
+    button_bottom_middle = Button(24)
+    button_bottom_right = Button(23)
+    button_blue_left = Button(10)
+    button_blue_right = Button(9)
+
 
 from utils import scale_image, blit_rotate_center
 
