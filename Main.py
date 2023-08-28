@@ -65,6 +65,11 @@ class AbstractCar:
         self.vel = min(self.vel + self.acceleration, self.max_vel)
         self.move()
 
+    def move_backward(self):
+        moving = True
+        self.vel = min(self.vel - self.acceleration, -self.max_vel/2)
+        self.move()
+
     def move(self):
         radians = math.radians(self.angle)
         vertical = math.cos(radians) * self.vel
@@ -110,6 +115,10 @@ while run:
         moved = True
         moving = True
         player_car.move_forward()
+    if keys[pygame.K_s]:
+        moved = True
+        moving = True
+        player_car.move_backward()
 
     if uname[1] == "raspberrypi":
         if button_bottom_left.is_pressed:
