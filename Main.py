@@ -125,7 +125,7 @@ while run:
         if uname[1] == "raspberrypi":
             if joystick_left.is_pressed:
                 player_car.rotate(left=True)
-            if joystick_left.is_pressed:
+            if joystick_right.is_pressed:
                 player_car.rotate(right=True)
 
     if not moved:
