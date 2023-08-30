@@ -132,7 +132,7 @@ while run:
             moving = True
             player_car.move_backward()
         if button_blue_left.is_pressed:
-            pygame.quit()
+            player_car.rotate(left=True)
 
     if moving:
         if keys[pygame.K_a]:
