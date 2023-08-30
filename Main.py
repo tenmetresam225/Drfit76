@@ -120,8 +120,7 @@ while run:
         moving = True
         player_car.move_backward()
     if keys[pygame.K_ESCAPE]:
-        pygame.display.quit()
-        pygame.display.init()
+        pygame.quit()
 
     if uname[1] == "raspberrypi":
         if button_bottom_left.is_pressed:
