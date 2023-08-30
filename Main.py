@@ -36,7 +36,7 @@ GREEN_CAR = scale_image(pygame.image.load("Images/green-car.png"), 0.55)
 MAIN_CAR = scale_image(pygame.image.load("Images/main-car.png"), 0.55)
 
 WIDTH, HEIGHT = TRACK.get_width(), TRACK.get_height()
-WIN = pygame.display.set_mode((WIDTH, HEIGHT), pygame.FULLSCREEN)
+WIN = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Drift76")
 
 FPS = 60
