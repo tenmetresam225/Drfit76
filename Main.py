@@ -131,6 +131,8 @@ while run:
             moved = True
             moving = True
             player_car.move_backward()
+        if button_blue_left.is_pressed:
+            pygame.quit()
 
     if moving:
         if keys[pygame.K_a]:
