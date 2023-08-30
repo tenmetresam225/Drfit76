@@ -27,7 +27,7 @@ if uname[1] == "raspberrypi":
 from utils import scale_image, blit_rotate_center
 
 GRASS = scale_image(pygame.image.load("Images/grass.jpg"), 2.5)
-TRACK = scale_image(pygame.image.load("Images/track.png"), 0.9)
+TRACK = scale_image(pygame.image.load("Images/track.png"), 0.6)
 
 TRACK_BORDER = scale_image(pygame.image.load("Images/track-border.png"), 0.9)
 FINISH = pygame.image.load("Images/finish.png")
@@ -36,7 +36,7 @@ GREEN_CAR = scale_image(pygame.image.load("Images/green-car.png"), 0.55)
 MAIN_CAR = scale_image(pygame.image.load("Images/main-car.png"), 0.55)
 
 WIDTH, HEIGHT = TRACK.get_width(), TRACK.get_height()
-WIN = pygame.display.set_mode((WIDTH, HEIGHT))
+WIN = pygame.display.set_mode((WIDTH, HEIGHT), pygame.FULLSCREEN)
 pygame.display.set_caption("Drift76")
 
 FPS = 60
@@ -119,6 +119,9 @@ while run:
         moved = True
         moving = True
         player_car.move_backward()
+    if keys[pygame.K_ESCAPE]:
+        pygame.display.quit()
+        pygame.display.init()
 
     if uname[1] == "raspberrypi":
         if button_bottom_left.is_pressed:
