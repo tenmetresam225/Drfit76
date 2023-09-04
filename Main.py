@@ -84,6 +84,10 @@ class AbstractCar:
         self.vel = max(self.vel - self.acceleration / 1, 0)
         self.move()
 
+    def bounce(self):
+        self.vel = -self.vel
+        self.move()
+
     def collide(self, mask, x=0, y=0):
         car_mask = pygame.mask.from_surface(self.img)
         offset = (int(self.x - x), int(self.y - y))
@@ -157,6 +161,6 @@ while run:
         player_car.reduce_speed()
 
     if player_car.collide(TRACK_BORDER_MASK) != None:
-        print ("collide")
+        player_car.bounce()
 
 pygame.quit()
