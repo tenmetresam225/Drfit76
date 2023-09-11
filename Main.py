@@ -85,7 +85,10 @@ class AbstractCar:
         self.move()
 
     def bounce(self):
-        self.vel = -1
+        if forward(True):
+            self.vel = -1
+        if reverse(True):
+            self.vel = +1
 
     def collide(self, mask, x=0, y=0):
         car_mask = pygame.mask.from_surface(self.img)
@@ -121,6 +124,8 @@ while run:
     keys = pygame.key.get_pressed()
     moved = False
     moving = False
+    forward = False
+    reverse = False
 
     if keys[pygame.K_w]:
         moved = True
@@ -137,10 +142,12 @@ while run:
         if button_bottom_left.is_pressed:
             moved = True
             moving = True
+            forward = True
             player_car.move_forward()
         if button_bottom_middle.is_pressed:
             moved = True
             moving = True
+            reverse = True
             player_car.move_backward()
         if button_blue_left.is_pressed:
             pygame.quit()
