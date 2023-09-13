@@ -141,7 +141,7 @@ while run:
     if uname[1] == "raspberrypi":
         if button_bottom_left.is_pressed:
             if button_bottom_middle.is_pressed:
-                AbstractCar.vel = 0
+                AbstractCar.self.vel == 0
             else:
                 moved = True
                 moving = True
