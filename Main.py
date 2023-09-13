@@ -86,12 +86,9 @@ class AbstractCar:
 
     def bounce(self):
         if forward:
-            self.vel = -1
+            self.vel = 0
         if reverse:
-            self.vel = +1
-
-    def stall(self):
-        self.vel == 0
+            self.vel = 0
 
     def collide(self, mask, x=0, y=0):
         car_mask = pygame.mask.from_surface(self.img)
@@ -143,9 +140,6 @@ while run:
 
     if uname[1] == "raspberrypi":
         if button_bottom_left.is_pressed:
-            if button_bottom_middle.is_pressed:
-                player_car.stall()
-            else:
                 moved = True
                 moving = True
                 forward = True
