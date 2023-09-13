@@ -86,9 +86,9 @@ class AbstractCar:
 
     def bounce(self):
         if forward:
-            self.vel = 0
+            self.vel = -0.5
         if reverse:
-            self.vel = 0
+            self.vel = +0.5
 
     def collide(self, mask, x=0, y=0):
         car_mask = pygame.mask.from_surface(self.img)
