@@ -86,10 +86,10 @@ class AbstractCar:
 
     def bounce(self):
         if forward:
-            self.vel = -0.5
+            self.vel = -0.2
             moving = False
         if reverse:
-            self.vel = +0.5
+            self.vel = +0.2
             moving = False
 
     def collide(self, mask, x=0, y=0):
