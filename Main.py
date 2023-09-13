@@ -140,10 +140,13 @@ while run:
 
     if uname[1] == "raspberrypi":
         if button_bottom_left.is_pressed:
-            moved = True
-            moving = True
-            forward = True
-            player_car.move_forward()
+            if button_bottom_middle.ispressed:
+                AbstractCar.vel = 0
+            else:
+                moved = True
+                moving = True
+                forward = True
+                player_car.move_forward()
         if button_bottom_middle.is_pressed:
             moved = True
             moving = True
