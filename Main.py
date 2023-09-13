@@ -90,6 +90,9 @@ class AbstractCar:
         if reverse:
             self.vel = +1
 
+    def stall(self):
+        self.vel == 0
+
     def collide(self, mask, x=0, y=0):
         car_mask = pygame.mask.from_surface(self.img)
         offset = (int(self.x - x), int(self.y - y))
@@ -141,7 +144,7 @@ while run:
     if uname[1] == "raspberrypi":
         if button_bottom_left.is_pressed:
             if button_bottom_middle.is_pressed:
-                AbstractCar.vel == 0
+                AbstractCar.stall()
             else:
                 moved = True
                 moving = True
