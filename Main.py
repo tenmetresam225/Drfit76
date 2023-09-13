@@ -144,7 +144,7 @@ while run:
     if uname[1] == "raspberrypi":
         if button_bottom_left.is_pressed:
             if button_bottom_middle.is_pressed:
-                AbstractCar.stall()
+                player_car.stall()
             else:
                 moved = True
                 moving = True
