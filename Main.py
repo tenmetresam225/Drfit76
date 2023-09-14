@@ -86,10 +86,10 @@ class AbstractCar:
 
     def bounce(self):
         if forward:
-            self.vel = -0.2
+            self.vel = -0.5
             moving = False
         if reverse:
-            self.vel = +0.2
+            self.vel = +0.5
             moving = False
 
     def collide(self, mask, x=0, y=0):
@@ -115,8 +115,12 @@ player_car = PlayerCar(4, 4)
 
 while run:
     clock.tick(FPS)
+    Menu = True
 
-    draw(WIN, images, player_car)
+    if Menu == True:
+        pass
+    else:
+        draw(WIN, images, player_car)
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -139,6 +143,8 @@ while run:
         player_car.move_backward()
     if keys[pygame.K_ESCAPE]:
         pygame.quit()
+    if keys[pygame.K_TAB]:
+        Menu = False
 
     if uname[1] == "raspberrypi":
         if button_bottom_left.is_pressed:
@@ -151,7 +157,7 @@ while run:
             moving = True
             reverse = True
             player_car.move_backward()
-        if button_blue_left.is_pressed:
+        if button_blue_right.is_pressed:
             pygame.quit()
 
     if moving:
