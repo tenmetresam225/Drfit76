@@ -118,11 +118,9 @@ while run:
     Menu = True
 
     if Menu == False:
-        pass
-    else:
         draw(WIN, images, player_car)
-        if keys [pygame.K_p]:
-            print("HERE I AM")
+    else:
+        print("HERE I AM")
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
