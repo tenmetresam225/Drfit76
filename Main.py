@@ -113,11 +113,12 @@ clock = pygame.time.Clock()
 images = [(GRASS, (0, 0)), (TRACK, (0, 0))]
 player_car = PlayerCar(4, 4)
 
+
 while run:
     clock.tick(FPS)
     Menu = True
 
-    if Menu == False:
+    if Menu == True:
         draw(WIN, images, player_car)
     else:
         print("HERE I AM")
