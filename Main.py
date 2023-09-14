@@ -147,6 +147,9 @@ while run:
         Menu = False
 
     if uname[1] == "raspberrypi":
+        if button_blue_left.is_pressed:
+            Menu = False
+            print("FREESIA")
         if button_bottom_left.is_pressed:
                 moved = True
                 moving = True
