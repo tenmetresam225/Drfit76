@@ -115,13 +115,14 @@ player_car = PlayerCar(4, 4)
 
 while run:
     clock.tick(FPS)
-    Menu = 0
+    Menu = True
 
-    if Menu <= 0:
+    if Menu == False:
         pass
     else:
-        print("HERE I AM")
         draw(WIN, images, player_car)
+        if keys [pygame.K_p]:
+            print("HERE I AM")
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -145,11 +146,11 @@ while run:
     if keys[pygame.K_ESCAPE]:
         pygame.quit()
     if keys[pygame.K_TAB]:
-        Menu = +1
+        Menu = False
 
     if uname[1] == "raspberrypi":
         if button_blue_left.is_pressed:
-            Menu = +1
+            Menu = True
             print("FREESIA")
         if button_bottom_left.is_pressed:
                 moved = True
