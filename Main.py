@@ -119,7 +119,7 @@ while run:
 
     if Menu == True:
         pass
-    else:
+    if Menu == False:
         print("HERE I AM")
         draw(WIN, images, player_car)
 
@@ -149,7 +149,7 @@ while run:
 
     if uname[1] == "raspberrypi":
         if button_blue_left.is_pressed:
-            Menu == False
+            Menu = False
             print("FREESIA")
         if button_bottom_left.is_pressed:
                 moved = True
