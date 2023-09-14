@@ -120,6 +120,7 @@ while run:
     if Menu == True:
         pass
     else:
+        print("HERE I AM")
         draw(WIN, images, player_car)
 
     for event in pygame.event.get():
