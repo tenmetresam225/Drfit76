@@ -145,11 +145,11 @@ while run:
     if keys[pygame.K_ESCAPE]:
         pygame.quit()
     if keys[pygame.K_TAB]:
-        Menu = False
+        Menu = +1
 
     if uname[1] == "raspberrypi":
         if button_blue_left.is_pressed:
-            Menu = False
+            Menu = +1
             print("FREESIA")
         if button_bottom_left.is_pressed:
                 moved = True
