@@ -119,10 +119,8 @@ while run:
     Menu = False
     draw(WIN, images, player_car)
 
-    if Menu == False:
+    if Menu:
         print("I'm Sorry")
-    else:
-        print("HERE I AM")
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -146,11 +144,11 @@ while run:
     if keys[pygame.K_ESCAPE]:
         pygame.quit()
     if keys[pygame.K_TAB]:
-        Menu = False
+        Menu = True
 
     if uname[1] == "raspberrypi":
         if button_blue_left.is_pressed:
-            Menu = False
+            Menu = True
             print("FREESIA")
         if button_bottom_left.is_pressed:
                 moved = True
