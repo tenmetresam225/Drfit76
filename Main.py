@@ -113,10 +113,11 @@ clock = pygame.time.Clock()
 images = [(GRASS, (0, 0)), (TRACK, (0, 0))]
 player_car = PlayerCar(4, 4)
 
+Menu = False
 
 while run:
     clock.tick(FPS)
-    Menu = False
+
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
