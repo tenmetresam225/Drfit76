@@ -117,7 +117,6 @@ player_car = PlayerCar(4, 4)
 while run:
     clock.tick(FPS)
     Menu = False
-    draw(WIN, images, player_car)
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -161,6 +160,7 @@ while run:
             pygame.quit()
 
     if Menu:
+        draw(WIN, images, player_car)
         print("I'm Sorry")
 
     if moving:
