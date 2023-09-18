@@ -116,7 +116,7 @@ player_car = PlayerCar(4, 4)
 
 while run:
     clock.tick(FPS)
-    Menu = True
+    Menu = False
     draw(WIN, images, player_car)
 
     if Menu == False:
