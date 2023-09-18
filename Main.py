@@ -119,9 +119,6 @@ while run:
     Menu = False
     draw(WIN, images, player_car)
 
-    if Menu:
-        print("I'm Sorry")
-
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             run = False
@@ -162,6 +159,9 @@ while run:
             player_car.move_backward()
         if button_blue_right.is_pressed:
             pygame.quit()
+
+    if Menu:
+        print("I'm Sorry")
 
     if moving:
         if keys[pygame.K_a]:
