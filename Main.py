@@ -117,9 +117,9 @@ player_car = PlayerCar(4, 4)
 while run:
     clock.tick(FPS)
     Menu = True
+    draw(WIN, images, player_car)
 
     if Menu == False:
-        draw(WIN, images, player_car)
         print("I'm Sorry")
     else:
         print("HERE I AM")
