@@ -27,7 +27,7 @@ if uname[1] == "raspberrypi":
 from utils import scale_image, blit_rotate_center
 
 GRASS = scale_image(pygame.image.load("Images/grass.jpg"), 2.5)
-TRACK = scale_image(pygame.image.load("Images/final-test-track-border.png"), 0.8)
+TRACK = scale_image(pygame.image.load("Images/final-test-track-border.png"), 0.7)
 
 TRACK_BORDER = scale_image(pygame.image.load("Images/final-test-track-border.png"), 0.6)
 TRACK_BORDER_MASK = pygame.mask.from_surface(TRACK_BORDER)
