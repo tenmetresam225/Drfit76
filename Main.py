@@ -164,7 +164,7 @@ while run:
         draw(WIN, images, player_car)
         print("I'm Sorry")
     else:
-        draw(MENU)
+        draw(MENU, images, player_car)
 
     if moving:
         if keys[pygame.K_a]:
