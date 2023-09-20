@@ -28,7 +28,7 @@ from utils import scale_image, blit_rotate_center
 
 GRASS = scale_image(pygame.image.load("Images/grass.jpg"), 2.5)
 TRACK = scale_image(pygame.image.load("Images/final-test-track-border.png"), 0.6)
-
+MENU = scale_image(pygame.image.load("Images/Logo.png"), 0.6)
 TRACK_BORDER = scale_image(pygame.image.load("Images/final-test-track-border.png"), 0.6)
 TRACK_BORDER_MASK = pygame.mask.from_surface(TRACK_BORDER)
 
@@ -163,6 +163,8 @@ while run:
     if Menu:
         draw(WIN, images, player_car)
         print("I'm Sorry")
+    else:
+        draw(MENU)
 
     if moving:
         if keys[pygame.K_a]:
