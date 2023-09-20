@@ -105,12 +105,11 @@ def draw(win, images, player_car):
     for img, pos in images:
         win.blit(img, pos)
 
-def Main(win, images, MENU):
-    for img, pos in images:
-        win.blit(img, pos)
-
     player_car.draw(win)
     pygame.display.update()
+
+def Main(x,y):
+    WIN.blit(MENU, (x,y))
 
 run = True
 clock = pygame.time.Clock()
@@ -166,9 +165,6 @@ while run:
 
     if Menu:
         draw(WIN, images, player_car)
-    else:
-        print("flying though the galaxy")
-        draw(WIN, images, MENU)
 
     if moving:
         if keys[pygame.K_a]:
