@@ -162,8 +162,8 @@ while run:
 
     if Menu:
         draw(WIN, images, player_car)
-        print("I'm Sorry")
     else:
+        print("flying though the galaxy")
         draw(MENU, images, player_car)
 
     if moving:
