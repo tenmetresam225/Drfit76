@@ -168,7 +168,7 @@ while run:
         draw(WIN, images, player_car)
     else:
         print("flying though the galaxy")
-        draw(WIN, MENU, player_car)
+        draw(WIN, images, MENU)
 
     if moving:
         if keys[pygame.K_a]:
