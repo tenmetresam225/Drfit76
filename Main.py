@@ -150,7 +150,7 @@ while run:
     if uname[1] == "raspberrypi":
         if button_blue_left.is_pressed:
             Menu = not Menu
-            pygame.time.wait(3000)
+            pygame.time.wait(60000)
             print("FREESIA")
         if button_bottom_left.is_pressed:
                 moved = True
