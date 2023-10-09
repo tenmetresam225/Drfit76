@@ -61,7 +61,8 @@ class AbstractCar:
 
     def draw(self, win):
         blit_rotate_center(win, self.img, (self.x, self.y), self.angle)
-
+    def Main(self, win):
+        blit_rotate_center(win, self.img, (self.x, self.y), self.angle)
     def move_forward(self):
         moving = True
         self.vel = min(self.vel + self.acceleration, self.max_vel)
@@ -110,6 +111,7 @@ def draw(win, images, player_car):
 
 def Main(x,y):
     WIN.blit(MENU, (0, 0))
+    pygame.display.update()
 
 run = True
 clock = pygame.time.Clock()
