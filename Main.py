@@ -163,10 +163,10 @@ while run:
         if button_blue_right.is_pressed:
             pygame.quit()
 
-    if Menu:
-        draw(WIN, images, player_car)
-    else:
+    if not Menu:
         Main(0, 0)
+    else:
+        draw(WIN, images, player_car)
 
     if moving:
         if keys[pygame.K_a]:
