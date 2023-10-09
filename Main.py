@@ -61,8 +61,7 @@ class AbstractCar:
 
     def draw(self, win):
         blit_rotate_center(win, self.img, (self.x, self.y), self.angle)
-    def Main(self, win):
-        blit_rotate_center(win, self.img, (self.x, self.y), self.angle)
+
     def move_forward(self):
         moving = True
         self.vel = min(self.vel + self.acceleration, self.max_vel)
@@ -169,6 +168,7 @@ while run:
         Main(0, 0)
     else:
         draw(WIN, images, player_car)
+        pygame.time.wait(3000)
 
     if moving:
         if keys[pygame.K_a]:
