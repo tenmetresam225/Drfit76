@@ -165,6 +165,8 @@ while run:
 
     if Menu:
         draw(WIN, images, player_car)
+    else:
+        Main(WIN, images, Menu)
 
     if moving:
         if keys[pygame.K_a]:
