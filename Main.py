@@ -150,6 +150,7 @@ while run:
     if uname[1] == "raspberrypi":
         if button_blue_left.is_pressed:
             Menu = not Menu
+            pygame.time.wait(3000)
             print("FREESIA")
         if button_bottom_left.is_pressed:
                 moved = True
@@ -168,7 +169,6 @@ while run:
         Main(0, 0)
     else:
         draw(WIN, images, player_car)
-        pygame.time.wait(3000)
 
     if moving:
         if keys[pygame.K_a]:
