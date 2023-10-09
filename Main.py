@@ -109,7 +109,7 @@ def draw(win, images, player_car):
     pygame.display.update()
 
 def Main(x,y):
-    WIN.blit(MENU, (x,y))
+    WIN.blit(MENU, (0, 0))
 
 run = True
 clock = pygame.time.Clock()
