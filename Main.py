@@ -27,9 +27,9 @@ if uname[1] == "raspberrypi":
 from utils import scale_image, blit_rotate_center
 
 GRASS = scale_image(pygame.image.load("Images/grass.jpg"), 2.5)
-TRACK = scale_image(pygame.image.load("Images/final-test-track-border.png"), 0.6)
+TRACK = scale_image(pygame.image.load("Images/track.png"), 0.6)
 MENU = scale_image(pygame.image.load("Images/Logo.png"), 0.6)
-TRACK_BORDER = scale_image(pygame.image.load("Images/final-test-track-border.png"), 0.6)
+TRACK_BORDER = scale_image(pygame.image.load("Images/track-border.png"), 0.6)
 TRACK_BORDER_MASK = pygame.mask.from_surface(TRACK_BORDER)
 
 FINISH = pygame.image.load("Images/finish.png")
@@ -150,7 +150,7 @@ while run:
     if uname[1] == "raspberrypi":
         if button_blue_left.is_pressed:
             Menu = not Menu
-            pygame.time.wait(60000)
+            pygame.time.wait(1500)
             print("FREESIA")
         if button_bottom_left.is_pressed:
                 moved = True
