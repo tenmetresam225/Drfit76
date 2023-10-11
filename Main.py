@@ -36,7 +36,7 @@ FINISH = pygame.image.load("Images/finish.png")
 RED_CAR = scale_image(pygame.image.load("Images/red-car.png"), 0.55)
 GREEN_CAR = scale_image(pygame.image.load("Images/green-car.png"), 0.55)
 MAIN_CAR = scale_image(pygame.image.load("Images/main-car.png"), 0.35)
-RIVAL_CAR = scale_image(pygame.image.load("Images/rivalcar.pg"), 0.35)
+RIVAL_CAR = scale_image(pygame.image.load("Images/rival-car.pg"), 0.35)
 
 WIDTH, HEIGHT = TRACK.get_width(), TRACK.get_height()
 WIN = pygame.display.set_mode((WIDTH, HEIGHT), pygame.FULLSCREEN)
