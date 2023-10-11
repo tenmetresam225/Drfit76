@@ -36,6 +36,7 @@ FINISH = pygame.image.load("Images/finish.png")
 RED_CAR = scale_image(pygame.image.load("Images/red-car.png"), 0.55)
 GREEN_CAR = scale_image(pygame.image.load("Images/green-car.png"), 0.55)
 MAIN_CAR = scale_image(pygame.image.load("Images/main-car.png"), 0.35)
+RIVAL_CAR = scale_image(pygame.image.load("Images/rivalcar.pg"), 0.35)
 
 WIDTH, HEIGHT = TRACK.get_width(), TRACK.get_height()
 WIN = pygame.display.set_mode((WIDTH, HEIGHT), pygame.FULLSCREEN)
@@ -46,12 +47,12 @@ FPS = 60
 class AbstractCar:
     def __init__(self, max_vel, rotation_vel):
         self.img = self.IMG
-        self.max_vel = 2
+        self.max_vel = max_vel
         self.vel = 0
         self.rotation_vel = rotation_vel
         self.angle = 0
         self.x, self.y = self.START_POS
-        self.acceleration = 0.1
+        self.acceleration = 0.2
 
     def rotate(self, left=False, right=False):
         if left:
@@ -98,6 +99,24 @@ class AbstractCar:
         poi = mask.overlap(car_mask, offset)
         return poi
 
+class ComputerCar(AbstractCar):
+    IMG = RIVAL_CAR
+    START_POS = (150, 200)
+
+    def __init__(self, max_vel, rotation_vel, path=[]):
+        super().__init__(max_vel, rotation_vel)
+        self.path = path
+        self.current_point = 0
+        self.vel = max_vel
+
+    def draw_points(self,win):
+            for point in self.path:
+                pygame.draw.circle(win(255, 0, 0), point, 5)
+
+    def draw(self, win):
+        super().draw(win)
+        self.draw_points(win)
+
 class PlayerCar(AbstractCar):
     IMG = MAIN_CAR
     START_POS = (180, 200)
@@ -106,6 +125,7 @@ def draw(win, images, player_car):
         win.blit(img, pos)
 
     player_car.draw(win)
+    computer_car.draw(win)
     pygame.display.update()
 
 def Main(x,y):
@@ -115,8 +135,8 @@ def Main(x,y):
 run = True
 clock = pygame.time.Clock()
 images = [(GRASS, (0, 0)), (TRACK, (0, 0))]
-player_car = PlayerCar(4, 4)
-
+player_car = PlayerCar(2, 4)
+computer_car = ComputerCa(2, 4)
 Menu = False
 
 while run:
