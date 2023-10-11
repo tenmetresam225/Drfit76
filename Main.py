@@ -136,7 +136,7 @@ run = True
 clock = pygame.time.Clock()
 images = [(GRASS, (0, 0)), (TRACK, (0, 0))]
 player_car = PlayerCar(2, 4)
-computer_car = ComputerCa(2, 4)
+computer_car = ComputerCar(2, 4)
 Menu = False
 
 while run:
