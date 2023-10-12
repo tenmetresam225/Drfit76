@@ -101,7 +101,7 @@ class AbstractCar:
 
 class ComputerCar(AbstractCar):
     IMG = RIVAL_CAR
-    START_POS = (150, 200)
+    START_POS = (175, 200)
 
     def __init__(self, max_vel, rotation_vel, path=[]):
         super().__init__(max_vel, rotation_vel)
@@ -119,7 +119,7 @@ class ComputerCar(AbstractCar):
 
 class PlayerCar(AbstractCar):
     IMG = MAIN_CAR
-    START_POS = (180, 200)
+    START_POS = (190, 200)
 def draw(win, images, player_car):
     for img, pos in images:
         win.blit(img, pos)
