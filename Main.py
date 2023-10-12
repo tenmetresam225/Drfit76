@@ -147,6 +147,9 @@ while run:
         if event.type == pygame.QUIT:
             run = False
             break
+        if event.type == pygame.MOUSEBUTTONDOWN:
+            pos = pygame.mouse.get_pos()
+            computer_car.path.append(pos)
 
     keys = pygame.key.get_pressed()
     moved = False
@@ -207,4 +210,5 @@ while run:
     if player_car.collide(TRACK_BORDER_MASK) != None:
         player_car.bounce()
 
+print(computer_car.path)
 pygame.quit()
