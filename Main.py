@@ -120,7 +120,7 @@ class ComputerCar(AbstractCar):
 class PlayerCar(AbstractCar):
     IMG = MAIN_CAR
     START_POS = (190, 200)
-def draw(win, images, player_car):
+def draw(win, images, player_car, computer_car):
     for img, pos in images:
         win.blit(img, pos)
 
